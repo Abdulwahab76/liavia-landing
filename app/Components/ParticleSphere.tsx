@@ -173,7 +173,22 @@ export default function ParticleSphere(): JSX.Element {
     };
 
     animate();
+    const handleResize = () => {
+      if (!container) return;
 
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      // update renderer
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // update camera
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    };
+
+    window.addEventListener("resize", handleResize);
     // ==============================
     // CLEANUP
     // ==============================
@@ -185,12 +200,32 @@ export default function ParticleSphere(): JSX.Element {
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
+
+      window.removeEventListener("resize", handleResize);
+
+      geometry.dispose();
+      material.dispose();
+      renderer.dispose();
+
+      if (container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
+      }
     };
   }, []);
 
   return (
-    <div className="w-full h-full  bg-primary">
-      <div ref={mountRef} className="h-100 w-100  lg:w-full lg:h-full " />
+    <div className="w-full bg-primary">
+      <div
+        ref={mountRef}
+        className="
+        w-full 
+        h-70      
+        sm:h-90      
+        md:h-125     
+        lg:h-150      
+        xl:h-175
+      "
+      />
     </div>
   );
 }

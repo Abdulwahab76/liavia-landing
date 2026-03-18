@@ -4,8 +4,8 @@ import React from "react";
 
 export default function VideoHero() {
   return (
-    <section className="w-full  mx-auto flex items-center justify-start bg-primary relative z-40 ">
-      <div className="relative w-full mx-4 lg:mx-10  lg:h-120   overflow-hidden rounded-4xl">
+    <section className="w-full mx-auto flex items-center justify-start bg-primary relative z-40">
+      <div className="relative w-full mx-4 lg:mx-10 h-[75vh] sm:h-[85vh] lg:h-120 overflow-hidden rounded-4xl lg:rounded-4xl lg:px-20">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -17,29 +17,35 @@ export default function VideoHero() {
           preload="metadata"
         />
 
-        {/* Dark overlay for text readability */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/35"></div>
 
         {/* Content */}
-        <div className="relative z-10 grid h-full grid-rows-[1fr_auto_1fr] text-white px-6">
+        <div className="relative z-10 grid h-full grid-rows-[1fr_auto_1fr] text-white px-4 sm:px-6 lg:px-10">
           {/* Center Title */}
-          <div className="row-start-2 flex items-center justify-center text-center">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[105px] font-light">
-              Growing Together
+          <div className="row-start-2 flex items-center justify-center text-center px-2">
+            <h1
+              className="font-serif font-light leading-[1.05]
+          text-3xl   text-[60px]"
+            >
+              Growing
+              <br className="sm:hidden" /> Together
             </h1>
           </div>
 
           {/* Bottom Row */}
-          
-          <div className="row-start-3 flex items-end justify-between pb-8 px-20">
-            {/* Scroll Left */}
-            <div className="flex items-center gap-2 text-xl  ">
+          <div className="row-start-3 lg:flex-row flex-col flex items-start justify-end gap-3 lg:items-end lg:justify-between pb-6 sm:pb-8">
+            {/* Scroll */}
+            <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg">
               <span className="animate-bounce">↓</span>
               <span>Scroll</span>
             </div>
 
-            {/* Paragraph Right */}
-            <p className="max-w-65 md:max-w-105 text-right text-sm md:text-lg lg:text-xl   font-medium">
+            {/* Paragraph */}
+            <p
+              className="max-w-45 sm:max-w-xs md:max-w-md text-left
+          text-xs sm:text-sm md:text-lg lg:text-xl font-medium leading-snug"
+            >
               Efficient turnkey solutions for global agricultural and bulk
               commodities.
             </p>
