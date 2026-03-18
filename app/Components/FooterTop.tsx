@@ -3,7 +3,7 @@
 export default function FooterTopCTA() {
   return (
     <section className="w-full bg-primary border-t relative z-50 border-[#cfc8b8]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-12 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between gap-10">
         {/* LEFT CONTENT */}
         <div className="w-full lg:w-[60%]">
           <h2 className="text-4xl md:text-6xl lg:text-[72px] leading-[1.1] font-serif text-[#2d2c22] mb-8">

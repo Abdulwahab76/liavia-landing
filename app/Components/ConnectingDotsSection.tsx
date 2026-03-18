@@ -15,8 +15,8 @@ export default function CopenhagenSection() {
       ref={sectionRef}
       className="w-full flex items-stretch min-h-105 overflow-hidden [background:#eae6dc] font-serif relative"
     >
-      <div className="px-4 lg:px-20 flex w-full">
-        <div className="basis-full lg:flex-[0_0_55%] w-full px-4 lg:px-12 py-16 flex flex-col justify-center z-10">
+      <div className="px-4 lg:px-12  flex w-full">
+        <div className="basis-full lg:flex-[0_0_55%] w-full  py-16 flex flex-col justify-center z-10">
           <p className="text-lg  lg:text-left text-center mb-5 font-sans font-medium text-[#5a5640]">
             What we do
           </p>
@@ -27,7 +27,7 @@ export default function CopenhagenSection() {
             dots
           </h1>
 
-          <p className="text-lg leading-[1.75] lg:text-left text-center  font-sans font-medium max-w-100 text-[#3d3b2e]">
+          <p className="text-lg leading-[1.75] lg:text-left text-center  font-sans font-light max-w-xl text-[#3d3b2e]">
             At the heart of our group is
             <strong className="font-semibold text-[#0f0f0f] pl-2">
               Copenhagen Merchants

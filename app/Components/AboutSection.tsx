@@ -4,9 +4,9 @@ import React from "react";
 const AboutSection = () => {
   return (
     <div className="w-full bg-primary font-serif relative z-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 flex flex-col lg:flex-row items-center gap-12">
+      <div className="w-full px-4 lg:px-12 py-16 flex flex-col lg:flex-row items-center gap-12">
         {/* LEFT CONTENT */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-7/12 *:text-center *:lg:text-left">
           <p className="text-sm md:text-lg mb-4 font-sans font-medium text-[#5a5640]">
             Who we are
           </p>
@@ -16,7 +16,7 @@ const AboutSection = () => {
             group since 1977
           </h1>
 
-          <p className="text-base md:text-sm leading-[1.75] font-sans font-light text-[#3d3b2e] max-w-sm">
+          <p className="text-base md:text-sm leading-[1.75] font-sans font-light text-[#3d3b2e] max-w-lg">
             We are a team of passionate team players who strive to operate like
             a close-knit family, both internally and in our relationships with
             clients and partners. At its core, this means we always go the extra
@@ -29,11 +29,9 @@ const AboutSection = () => {
           </p>
 
           {/* BUTTON */}
-          <button className="group relative inline-flex items-center overflow-hidden pr-3 rounded-full mt-8 border border-gray-300 p-1">
-            {/* Expanding bg */}
-            <span className="absolute left-1  h-8 w-8 rounded-full bg-[#FD6A3D] transition-all duration-300 ease-in-out group-hover:w-[calc(100%-0.5rem)]"></span>
+          <button className="group relative flex  mx-auto items-center overflow-hidden pr-3 rounded-full mt-8  p-1">
+            <span className="absolute left-1 h-8 w-8 rounded-full bg-[#FD6A3D] transition-all duration-300 ease-in-out group-hover:w-[calc(100%-0.5rem)]"></span>
 
-            {/* Content */}
             <span className="relative z-10 flex items-center gap-3 py-1 text-black font-semibold">
               <span className="flex h-8 w-8 items-center justify-center">
                 →
@@ -47,13 +45,13 @@ const AboutSection = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-full lg:w-1/2">
-          <div className="relative w-full h-75 md:h-100 lg:h-150 rounded-2xl overflow-hidden">
+        <div className="w-full lg:w-5/12">
+          <div className="relative w-full h-75 md:h-100 lg:h-125 rounded-2xl overflow-hidden">
             <Image
               src="/images/about.webp"
               alt="About"
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover"
             />
           </div>
         </div>
