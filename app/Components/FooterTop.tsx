@@ -1,0 +1,49 @@
+"use client";
+
+export default function FooterTopCTA() {
+  return (
+    <section className="w-full bg-primary border-t relative z-50 border-[#cfc8b8]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between gap-10">
+        {/* LEFT CONTENT */}
+        <div className="w-full lg:w-[60%]">
+          <h2 className="text-4xl md:text-6xl lg:text-[72px] leading-[1.1] font-serif text-[#2d2c22] mb-8">
+            Let’s grow together
+          </h2>
+
+          {/* CTA BUTTON */}
+          <button className="group relative inline-flex items-center overflow-hidden pr-3 rounded-full mt-8  w-40   p-1">
+            {/* Expanding bg */}
+            <span className="absolute left-1  h-10 w-10 rounded-full bg-[#FD6A3D] transition-all duration-300 ease-in-out group-hover:w-[calc(100%-0.5rem)]"></span>
+
+            {/* Content */}
+            <span className="relative z-10 flex items-center gap-3 py-1 pl-1  text-black font-semibold">
+              <span className="flex h-8 w-8 items-center justify-center">
+                →
+              </span>
+
+              <span className="whitespace-nowrap text-sm">Get in Touch</span>
+            </span>
+          </button>
+        </div>
+
+        {/* RIGHT SIDE (VIDEO) */}
+        <div className="w-full lg:w-[40%] flex justify-center lg:justify-end">
+          <div className="w-full max-w-md lg:max-w-lg rounded-2xl overflow-hidden  ">
+            {/* Responsive video wrapper */}
+            <div className="relative w-full pt-[56.25%]">
+              <video
+                className="absolute top-0 left-0 w-full h-full object-cover"
+                src="/videos/octo-other.webm"
+                style={{ transform: "scaleX(-1) " }}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
