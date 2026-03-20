@@ -43,11 +43,11 @@ export default function GrowingTogetherSection() {
         label,
         { y: 0 },
         {
-          y: -200, // push up strongly
+          y: -100, // push up strongly
           ease: "none",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 30%",
             end: "top top",
             scrub: 1,
           },
@@ -59,11 +59,11 @@ export default function GrowingTogetherSection() {
         heading,
         { y: 0 },
         {
-          y: -300, // more than label for depth
+          y: -200, // more than label for depth
           ease: "none",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 50%",
             end: "top top",
             scrub: 1,
           },
@@ -100,15 +100,14 @@ export default function GrowingTogetherSection() {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
           <p
             ref={labelRef}
-            className="text-[16px] tracking-wider text-white/85 mb-5 font-normal"
+            className="text-lg tracking-wider text-white/85 mb-5 font-medium"
           >
             Growing together
           </p>
 
           <h2
             ref={headingRef}
-            className="text-3xl lg:text-[55px] leading-tight text-white font-normal max-w-175"
-            style={{ fontFamily: "Georgia, serif" }}
+            className="text-4xl lg:text-[55px] leading-tight text-white font-normal max-w-175"
           >
             We work to create value for our clients, partners and team members
           </h2>

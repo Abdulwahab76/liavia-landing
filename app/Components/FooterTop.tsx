@@ -18,7 +18,21 @@ export default function FooterTopCTA() {
             {/* Content */}
             <span className="relative z-10 flex items-center gap-3 py-1 pl-1  text-black font-semibold">
               <span className="flex h-8 w-8 items-center justify-center">
-                →
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-arrow-right-icon lucide-arrow-right"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
               </span>
 
               <span className="whitespace-nowrap text-sm">Get in Touch</span>

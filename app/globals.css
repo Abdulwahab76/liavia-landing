@@ -21,5 +21,14 @@
   --bg-primary: var(--bg-primary);
   --bg-secondary: var(--bg-secondary);
 }
+/* body{
+  font-family: var(--font-primary);
+} */
 
- 
+p,a, span,li {
+  font-family: var(--font-primary); 
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+

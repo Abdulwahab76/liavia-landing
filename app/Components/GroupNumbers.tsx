@@ -76,10 +76,7 @@ export default function GroupNumbers() {
     <section className="w-full bg-primary px-4 md:px-12  relative z-50 py-16">
       <div className="w-full">
         <div className="flex items-start justify-between mb-8">
-          <h2
-            className="text-[42px] md:text-[56px] font-normal leading-[1.1] text-[#1e1d18]"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
+          <h2 className="text-4xl md:text-[55px] font-normal leading-[1.1] text-[#1e1d18]">
             Group Numbers
           </h2>
 
@@ -149,7 +146,7 @@ export default function GroupNumbers() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="relative h-97! shrink-0 rounded-2xl overflow-hidden flex flex-col justify-between"
+              className="relative h-86! shrink-0 rounded-xl overflow-hidden flex flex-col justify-between"
               style={{
                 width: "clamp(280px, 28vw, 360px)",
                 height: "clamp(340px, 42vw, 440px)",
@@ -176,28 +173,18 @@ export default function GroupNumbers() {
               </div>
 
               {/* Top: label */}
-              <div>
+              <div className="flex flex-col gap-y-5">
                 <div className="relative z-10 px-5 pt-5">
-                  <span
-                    className="text-white text-[13px] font-medium tracking-wide"
-                    style={{ fontFamily: "'Helvetica Neue', sans-serif" }}
-                  >
+                  <span className="text-white text-xs font-bold tracking-wide">
                     {stat.label}
                   </span>
                 </div>
 
                 {/* Middle: big number */}
-                <div className="relative z-10 px-5">
-                  <p
-                    className="text-white leading-none"
-                    style={{
-                      fontFamily: "Georgia, serif",
-                      fontSize: "clamp(52px, 7vw, 88px)",
-                      fontWeight: 400,
-                    }}
-                  >
+                <div className="relative z-10 px-5 ">
+                  <h5 className="text-white leading-none text-6xl lg:text-[80px] ">
                     {stat.value}
-                  </p>
+                  </h5>
                 </div>
               </div>
 

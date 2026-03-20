@@ -13,7 +13,7 @@ export default function CopenhagenSection() {
   return (
     <div
       ref={sectionRef}
-      className="w-full flex items-stretch min-h-105 overflow-hidden [background:#eae6dc] font-serif relative"
+      className="w-full flex items-stretch min-h-105 overflow-hidden bg-primary font-serif relative"
     >
       <div className="px-4 lg:px-12  flex w-full">
         <div className="basis-full lg:flex-[0_0_55%] w-full  py-16 flex flex-col justify-center z-10">

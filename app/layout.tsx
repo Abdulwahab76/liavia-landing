@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/Layouts/Header";
 import GlobalDotCanvas from "./Components/DotsCanvas";
 import Footer from "./Components/Layouts/Footer";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const headingFont = localFont({
+  src: "./fonts/RecoletaRegular.woff",
+  variable: "--font-heading",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const primaryFont = localFont({
+  src: "./fonts/NHaasGroteskTXPro-55Rg.otf",
+  variable: "--font-primary",
+  weight: "500",
+  display: "swap",
 });
-
 export const metadata: Metadata = {
   title: "Welcome | LiaVia",
   description:
@@ -29,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}   antialiased`}
+        className={`${primaryFont.variable} ${headingFont.variable}   antialiased`}
       >
         <Header />
         <GlobalDotCanvas />
