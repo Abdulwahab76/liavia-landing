@@ -9,7 +9,7 @@ export default function VideoHero() {
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/network-video.mp4"
+          src="/videos/network-video.webm"
           autoPlay
           muted
           loop
