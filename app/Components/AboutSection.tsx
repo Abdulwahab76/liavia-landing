@@ -4,7 +4,7 @@ import React from "react";
 const AboutSection = () => {
   return (
     <div
-      className="w-full bg-primary font-serif relative z-50 "
+      className="w-full bg-primary font-serif relative z-40 "
       id="section1"
     >
       <div className="w-full px-4 lg:px-12 py-16 flex flex-col lg:flex-row items-center gap-12">

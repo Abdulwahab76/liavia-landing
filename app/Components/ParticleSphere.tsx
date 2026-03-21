@@ -190,7 +190,7 @@ export default function ParticleSphere(): JSX.Element {
   }, []);
 
   return (
-    <div className="w-full bg-primary">
+    <div className="w-full bg-primary ">
       <div
         ref={mountRef}
         className="
@@ -200,6 +200,7 @@ export default function ParticleSphere(): JSX.Element {
           md:h-125     
           lg:h-150      
           xl:h-175
+        
         "
       />
     </div>

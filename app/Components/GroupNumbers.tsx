@@ -73,7 +73,7 @@ export default function GroupNumbers() {
   };
 
   return (
-    <section className="w-full bg-primary px-4 md:px-12  relative z-30 py-16">
+    <section className="w-full bg-primary px-4 md:px-12  relative z-40 py-16">
       <div className="w-full">
         <div className="flex items-start justify-between mb-8">
           <h2 className="text-4xl md:text-[55px] font-normal leading-[1.1] text-[#1e1d18]">

@@ -16,7 +16,7 @@ export default function Home() {
       <GrowingTogetherSection />
       <GroupNumbers />
       <AboutSection />
-      <div className="w-full   lg:w-full flex justify-center items-center mx-auto   relative z-50">
+      <div className="w-full    lg:w-full flex justify-center items-center mx-auto   relative z-40">
         {" "}
         <ParticleSphere />{" "}
       </div>

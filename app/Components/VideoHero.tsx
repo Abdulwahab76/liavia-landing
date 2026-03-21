@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function VideoHero() {
   return (
-    <section className="w-full mx-auto flex items-center justify-start bg-primary relative z-50">
+    <section className="w-full mx-auto flex items-center justify-start bg-primary relative z-40">
       <div className="relative w-full mx-4 lg:mx-10 h-[75vh] sm:h-[85vh] lg:h-[82vh] overflow-hidden rounded-4xl lg:rounded-4xl lg:px-20">
         {/* Background Video */}
         <video

@@ -7,7 +7,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-primary h-18 relative z-40">
+    <header className="w-full bg-primary h-18 relative z-50">
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between h-full px-4 md:px-6">
         {/* Left: Logo + Desktop Nav */}
         <div className="flex items-center gap-32">
