@@ -29,10 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${primaryFont.variable} ${headingFont.variable}   antialiased`}
-      >
+    <html lang="en" className="scroll-smooth">
+      <body className={`${primaryFont.variable} ${headingFont.variable}  `}>
         <Header />
         <GlobalDotCanvas />
         {children}

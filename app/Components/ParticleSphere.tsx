@@ -20,16 +20,13 @@ export default function ParticleSphere(): JSX.Element {
     );
     camera.position.z = 3;
 
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-    });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
     // ==============================
-    // 🌍 PARTICLES WITH GAPS
+    // 🌍 PARTICLES
     // ==============================
     const count = 5000;
     const radius = 1.2;
@@ -67,8 +64,14 @@ export default function ParticleSphere(): JSX.Element {
     const positionAttr = new THREE.Float32BufferAttribute(positions, 3);
     geometry.setAttribute("position", positionAttr);
 
+    // ==============================
+    // 🎨 MATERIAL WITH CUSTOM COLORS
+    // ==============================
+    const BASE_COLOR = new THREE.Color("#B17F15"); // golden
+    const HOVER_COLOR = new THREE.Color("#8C640F"); // darker gold
+
     const material = new THREE.PointsMaterial({
-      color: "#7a7f66",
+      color: BASE_COLOR,
       size: 0.012,
       transparent: true,
       opacity: 0.85,
@@ -86,7 +89,6 @@ export default function ParticleSphere(): JSX.Element {
 
     container.addEventListener("mousemove", (e) => {
       const rect = container.getBoundingClientRect();
-
       mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
     });
@@ -100,26 +102,20 @@ export default function ParticleSphere(): JSX.Element {
     // 🎬 ANIMATION
     // ==============================
     const clock = new THREE.Clock();
-
-    const interactionRadius = 0.15; // 👈 VERY SMALL circle
+    const interactionRadius = 0.15;
 
     const animate = () => {
       requestAnimationFrame(animate);
-
       const elapsed = clock.getElapsedTime();
 
-      // rotation
+      // slow rotation
       points.rotation.y = elapsed * 0.12;
 
-      // raycast to sphere
+      // raycast
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObject(points);
-
       let mousePoint: THREE.Vector3 | null = null;
-
-      if (intersects.length > 0) {
-        mousePoint = intersects[0].point;
-      }
+      if (intersects.length > 0) mousePoint = intersects[0].point;
 
       const posArray = positionAttr.array as Float32Array;
 
@@ -138,19 +134,16 @@ export default function ParticleSphere(): JSX.Element {
           const dz = oz - mousePoint.z;
 
           const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
           if (dist < interactionRadius) {
-            // move slightly toward mouse
             const force = (interactionRadius - dist) * 0.3;
-
             nx += (mousePoint.x - ox) * force;
             ny += (mousePoint.y - oy) * force;
             nz += (mousePoint.z - oz) * force;
 
-            // darker color locally
-            material.color.lerp(new THREE.Color("#3a5a40"), 0.05);
+            // lerp color toward hover
+            material.color.lerp(HOVER_COLOR, 0.05);
 
-            // slightly bigger
+            // slightly larger
             material.size += (0.02 - material.size) * 0.05;
           }
         }
@@ -164,52 +157,35 @@ export default function ParticleSphere(): JSX.Element {
       // reset when not interacting
       if (!mousePoint) {
         material.size += (0.012 - material.size) * 0.05;
-        material.color.lerp(new THREE.Color("#7a7f66"), 0.05);
+        material.color.lerp(BASE_COLOR, 0.05);
       }
 
       positionAttr.needsUpdate = true;
-
       renderer.render(scene, camera);
     };
 
     animate();
+
     const handleResize = () => {
       if (!container) return;
-
       const width = container.clientWidth;
       const height = container.clientHeight;
-
-      // update renderer
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      // update camera
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
     };
 
     window.addEventListener("resize", handleResize);
-    // ==============================
-    // CLEANUP
-    // ==============================
+
     return () => {
       geometry.dispose();
       material.dispose();
       renderer.dispose();
-
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
-
       window.removeEventListener("resize", handleResize);
-
-      geometry.dispose();
-      material.dispose();
-      renderer.dispose();
-
-      if (container.contains(renderer.domElement)) {
-        container.removeChild(renderer.domElement);
-      }
     };
   }, []);
 
@@ -218,13 +194,13 @@ export default function ParticleSphere(): JSX.Element {
       <div
         ref={mountRef}
         className="
-        w-full 
-        h-70      
-        sm:h-90      
-        md:h-125     
-        lg:h-150      
-        xl:h-175
-      "
+          w-full 
+          h-70      
+          sm:h-90      
+          md:h-125     
+          lg:h-150      
+          xl:h-175
+        "
       />
     </div>
   );

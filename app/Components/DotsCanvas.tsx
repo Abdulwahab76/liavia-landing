@@ -7,8 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const COUNT = 2800;
-const BASE_COLOR = [55, 65, 28];
-const HOVER_COLOR = [25, 35, 10];
+const BASE_COLOR = [177, 127, 21]; // #B17F15
+const HOVER_COLOR = [140, 100, 15]; // darker shade for hover
 
 function blobShape(t: number): number {
   return (
@@ -214,7 +214,7 @@ export default function GlobalDotCanvas() {
         width: "100vw",
         height: "100vh",
         pointerEvents: "none",
-        zIndex: 50,
+        zIndex: 40,
       }}
     />
   );

@@ -1,15 +1,15 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 
 export default function VideoHero() {
   return (
-    <section className="w-full mx-auto flex items-center justify-start bg-primary relative z-40">
+    <section className="w-full mx-auto flex items-center justify-start bg-primary relative z-50">
       <div className="relative w-full mx-4 lg:mx-10 h-[75vh] sm:h-[85vh] lg:h-[82vh] overflow-hidden rounded-4xl lg:rounded-4xl lg:px-20">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/hero.mp4"
+          src="/videos/network-video.mp4"
           autoPlay
           muted
           loop
@@ -36,22 +36,27 @@ export default function VideoHero() {
           <div className="row-start-3 lg:flex-row flex-col flex items-start justify-end gap-3 lg:items-end lg:justify-between pb-6 sm:pb-8">
             {/* Scroll */}
             <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-arrow-down-icon lucide-arrow-down "
+              <a
+                href="#section1"
+                className="flex items-center gap-2 cursor-pointer"
               >
-                <path d="M12 5v14" />
-                <path d="m19 12-7 7-7-7" />
-              </svg>
-              <span>Scroll</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-arrow-down-icon lucide-arrow-down animate-arrow-down"
+                >
+                  <path d="M12 5v14" />
+                  <path d="m19 12-7 7-7-7" />
+                </svg>
+                <span>Scroll</span>
+              </a>
             </div>
 
             {/* Paragraph */}

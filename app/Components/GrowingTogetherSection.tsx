@@ -43,7 +43,7 @@ export default function GrowingTogetherSection() {
         label,
         { y: 0 },
         {
-          y: -100, // push up strongly
+          y: -200, // push up strongly
           ease: "none",
           scrollTrigger: {
             trigger: section,
@@ -77,7 +77,7 @@ export default function GrowingTogetherSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full flex justify-center items-center py-8 bg-[#eae6dc]"
+      className="w-full flex justify-center items-center py-8 bg-primary"
     >
       {/* Expanding image wrapper */}
       <div
