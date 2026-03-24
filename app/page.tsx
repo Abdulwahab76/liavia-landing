@@ -7,6 +7,8 @@ import GroupNumbers from "./Components/GroupNumbers";
 import AboutSection from "./Components/AboutSection";
 import ParticleSphere from "./Components/ParticleSphere";
 import FooterTopCTA from "./Components/FooterTop";
+import HowItWorks from "./Components/HowWorks";
+import SecuritySafety from "./Components/SecuritySafety";
 
 export default function Home() {
   return (
@@ -14,12 +16,15 @@ export default function Home() {
       <VideoHero />
       <CopenhagenSection />
       <GrowingTogetherSection />
-      <GroupNumbers />
+      {/* <GroupNumbers /> */}
+      <HowItWorks />
+      <SecuritySafety />
       <AboutSection />
       <div className="w-full    lg:w-full flex justify-center items-center mx-auto   relative z-40">
         {" "}
         <ParticleSphere />{" "}
       </div>
+
       <FooterTopCTA />
     </div>
   );

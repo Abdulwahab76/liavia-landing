@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -11,33 +12,50 @@ const Header = () => {
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between h-full px-4 md:px-6">
         {/* Left: Logo + Desktop Nav */}
         <div className="flex items-center gap-32">
-          <Image
-            src="/images/logo.png"
-            width={100}
-            height={100}
-            alt="Logo"
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              width={100}
+              height={100}
+              alt="Logo"
+              priority
+              className="cursor-pointer"
+            />
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-14 text-[15px] font-medium text-black">
-            <a href="#" className="hover:opacity-70 font-bold text-[12px]">
-              What we do
-            </a>
-            <a href="#" className="hover:opacity-70 font-bold text-[12px]">
-              Who we are
-            </a>
-            <a href="#" className="hover:opacity-70 font-bold text-[12px]">
-              Contact
-            </a>
+            <Link
+              href="#what"
+              className="hover:opacity-70 font-bold text-[13px]"
+            >
+              What
+            </Link>
+            <Link
+              href="#who"
+              className="hover:opacity-70 font-bold text-[13px]"
+            >
+              Who
+            </Link>
+            <Link
+              href="#security"
+              className="hover:opacity-70 font-bold text-[13px]"
+            >
+              Security
+            </Link>
+
+            {/* CTA */}
           </nav>
         </div>
 
         {/* Right: Desktop Career */}
         <div className="hidden md:block">
-          <a href="#" className="text-[12px] font-bold hover:opacity-70">
-            Career
-          </a>
+          <Link
+            href="#contact"
+            className="px-4 py-1.5 rounded-full    text-[13px] font-bold  transition"
+          >
+            Contact
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -68,18 +86,21 @@ const Header = () => {
 
           {/* Menu */}
           <nav className="flex flex-col gap-6 text-lg font-medium">
-            <a href="#" onClick={() => setOpen(false)}>
-              What we do
-            </a>
-            <a href="#" onClick={() => setOpen(false)}>
-              Who we are
-            </a>
-            <a href="#" onClick={() => setOpen(false)}>
+            <Link href="#what" onClick={() => setOpen(false)}>
+              What
+            </Link>
+            <Link href="#who" onClick={() => setOpen(false)}>
+              Who
+            </Link>
+            <Link href="#security" onClick={() => setOpen(false)}>
+              Security
+            </Link>
+            <Link href="#contact" onClick={() => setOpen(false)}>
               Contact
-            </a>
-            <a href="#" onClick={() => setOpen(false)}>
+            </Link>
+            <Link href="/career" onClick={() => setOpen(false)}>
               Career
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

@@ -23,21 +23,62 @@ export default function VideoHero() {
         {/* Content */}
         <div className="relative z-10 grid h-full grid-rows-[1fr_auto_1fr] text-white px-4 sm:px-6 lg:px-6">
           {/* Center Title */}
-          <div className="row-start-2 flex items-center justify-center text-center px-2">
+          <div className="row-start-2 gap-y-4 flex flex-col items-center justify-center text-center px-2">
             <h1
               className="font-serif font-light leading-[1.05]
           text-4xl   lg:text-[94px]"
             >
-              Growing Together
+              Momentum. By Design.
             </h1>
+
+            {/* Paragraph */}
+            <p
+              className="w-full lg:px-20  text-center
+          text-xs   lg:text-[16px] font-bold leading-relaxed"
+            >
+              No plan survives contact with the real world. Strategy sets
+              direction. Execution sets trajectory LiaVIa maps your true
+              delivery capacity so your momentum compounds, not dissipates.
+            </p>
+            <Link href="#contact">
+              <button className="group relative inline-flex items-center overflow-hidden pr-3 rounded-full mt-8  w-40   p-1">
+                {/* Expanding bg */}
+                <span className="absolute left-1  h-10 w-10 rounded-full  bg-primary-gold hover:bg-dark-gold     transition-all duration-300 ease-in-out group-hover:w-[calc(100%-0.5rem)]"></span>
+
+                {/* Content */}
+                <span className="relative z-10 flex items-center gap-3 py-1 pl-1 font-bold  text-white cursor-pointer">
+                  <span className="flex h-8 w-8 items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-arrow-right-icon lucide-arrow-right"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </span>
+
+                  <span className="whitespace-nowrap text-sm">
+                    Get in Touch
+                  </span>
+                </span>
+              </button>
+            </Link>
           </div>
 
           {/* Bottom Row */}
           <div className="row-start-3 lg:flex-row flex-col flex items-start justify-end gap-3 lg:items-end lg:justify-between pb-6 sm:pb-8">
             {/* Scroll */}
             <div className="flex items-center gap-2 text-sm sm:text-base md:text-lg">
-              <a
-                href="#section1"
+              <Link
+                href="#who"
                 className="flex items-center gap-2 cursor-pointer"
               >
                 <svg
@@ -56,17 +97,8 @@ export default function VideoHero() {
                   <path d="m19 12-7 7-7-7" />
                 </svg>
                 <span>Scroll</span>
-              </a>
+              </Link>
             </div>
-
-            {/* Paragraph */}
-            <p
-              className="max-w-45 sm:max-w-xs md:max-w-90 text-left
-          text-xs   lg:text-[16px] font-bold leading-snug"
-            >
-              Efficient turnkey solutions for global agricultural and bulk
-              commodities.
-            </p>
           </div>
         </div>
       </div>
