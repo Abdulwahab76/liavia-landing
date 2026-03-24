@@ -11,12 +11,18 @@
   --color-secondary: #C4A484;
 }
  
-@theme inline {
+@theme inline   {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
   --color-primary: var(--bg-primary);
+  --color-light-gold: #e0a030;
   --color-secondary: var(--color-secondary);
+  --color-primary-gold: #ad781c;  
+  --color-dark-gold: #8a5e14;
+
+  --color-section-bg: #eae6dc;   /* ← section bg */
+  --color-footer-bg: #1e1d18;   /* ← headings / footer bg */
 
   --bg-primary: var(--bg-primary);
   --bg-secondary: var(--bg-secondary);
@@ -39,7 +45,7 @@
 
 }
  
-p,a, span,li {
+p,a,li {
   font-family: var(--font-primary); 
 }
 h1, h2, h3, h4, h5, h6 {
