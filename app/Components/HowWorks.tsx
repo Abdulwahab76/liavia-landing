@@ -10,9 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ─── CONTENT ──────────────────────────────────────────────────────────────────
 
+// CLIENT: image overlay text updated
 const imageOverlayText =
   "LiaVia exposes internal dynamics and behaviours that will shape execution momentum of your plans";
 
+// CLIENT: font size of this intro must match body text in "What we do" — text-[15px]
 const intro =
   "LiaVia exposes internal power dynamics and behaviours that will shape execution momentum by analysing your organization's communication patterns.";
 
@@ -84,38 +86,76 @@ const app: ProductSection = {
   ],
   footerNote:
     "Continuous insights across 3 core levels, delivered on a strict need-to-know basis.",
-  // CLIENT: LiaVia App was missing "What it takes" — added from original word doc
+  // Steps taken directly from pitch deck slide 4 image
   steps: [
     {
-      duration: "Day 1",
-      title: "Access granted",
-      subtitle: "Connect to your comms system",
+      duration: "01",
+      title: "LiaVia calibrated",
+      subtitle: "for your organisation",
     },
     {
-      duration: "Day 2",
-      title: "Calibration",
-      subtitle: "AI trained to your context",
+      duration: "02",
+      title: "Strategic decision",
+      subtitle: "added for forecasting",
     },
     {
-      duration: "Day 3",
-      title: "Live insights",
-      subtitle: "From access to action, automatically",
+      duration: "03",
+      title: "Communication data",
+      subtitle: "ingested & anonymized",
+    },
+    {
+      duration: "04",
+      title: "Reports",
+      subtitle: "for Leaders",
     },
   ],
 };
+
+// ─── LOGO MARK ────────────────────────────────────────────────────────────────
+// CLIENT: LiaVia logo mark should appear just before product tag name
+// Swap this SVG for the real logo asset when available
+
+function LogoMark() {
+  return (
+    <svg
+      width="20"
+      height="18"
+      viewBox="0 0 20 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="shrink-0"
+      aria-hidden
+    >
+      <path
+        d="M10 1L18.5 9L10 17L1.5 9L10 1Z"
+        stroke="#AD781C"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M10 4L15.5 9L10 14L4.5 9L10 4Z"
+        fill="#AD781C"
+        fillOpacity="0.3"
+      />
+    </svg>
+  );
+}
 
 // ─── PILL ─────────────────────────────────────────────────────────────────────
 
 function Pill({ label }: { label: string }) {
   return (
-    <h5
-      className="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wide border"
+    <span
+      className="inline-block px-3 py-1 rounded-full text-xs font-medium tracking-wide border"
       style={{ color: "#1e1d18", borderColor: "rgba(30,29,24,0.25)" }}
     >
       {label}
-    </h5>
+    </span>
   );
 }
+
+// ─── BULLET ROW ───────────────────────────────────────────────────────────────
+// CLIENT: no numbers, no lines between items, no full stop at end,
+//         bold label but NOT italic, all same font
 
 function BulletRow({ item }: { item: BulletItem }) {
   return (
@@ -158,26 +198,42 @@ function ProcessTimeline({
             key={i}
             className="flex sm:flex-col flex-row gap-3 sm:gap-0 sm:flex-1 relative"
           >
-            {/* Connector line (desktop only) */}
+            {/* Connector arrow — gold chevron between steps (desktop) */}
             {i < steps.length - 1 && (
               <div
-                className="hidden sm:block absolute top-5 left-1/2 w-full h-px z-0"
-                style={{ background: "rgba(30,29,24,0.15)" }}
-              />
+                className="hidden sm:flex absolute top-5 items-center justify-end z-0"
+                style={{ left: "50%", width: "100%", paddingRight: "4px" }}
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    d="M5 4l8 5-8 5"
+                    stroke="#AD781C"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
             )}
+
             {/* Step circle */}
             <div className="relative z-10 flex sm:justify-center mb-0 sm:mb-3">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center text-[11px] font-semibold shrink-0 bg-primary-gold text-white text-center px-1 leading-tight">
-                {step.duration.includes("day")
-                  ? step.duration.replace(" days", "d")
-                  : step.duration.includes("Day")
-                  ? step.duration
-                  : step.duration.replace(" min", "m")}
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center text-[12px] font-bold shrink-0 text-white"
+                style={{ background: "#AD781C" }}
+              >
+                {step.duration}
               </div>
             </div>
-            {/* Step text */}
+
+            {/* Step labels */}
             <div className="sm:text-center pb-6 sm:pb-0 sm:px-2">
-              <p className="text-[13px]   leading-tight">{step.title}</p>
+              <p
+                className="text-[13px] font-semibold leading-tight"
+                style={{ color: "#1e1d18" }}
+              >
+                {step.title}
+              </p>
               <p
                 className="text-[12px] mt-0.5 leading-tight"
                 style={{ color: "#5a5640" }}
@@ -217,12 +273,20 @@ function ProductCard({
       </div>
 
       {/* Headline */}
-      <h3 className="text-[22px] md:text-[24px] font-normal leading-[1.35]">
+      <h3
+        className="text-[22px] md:text-[24px] font-normal leading-[1.35]"
+        style={{ fontFamily: "Georgia, serif", color: "#1e1d18" }}
+      >
         {product.headline}
       </h3>
 
       {/* CLIENT: 1st sentence bold, same font, no italics */}
-      <p className="text-[15px]   leading-relaxed">{product.subheadline}</p>
+      <p
+        className="text-[15px] font-semibold leading-relaxed"
+        style={{ color: "#1e1d18" }}
+      >
+        {product.subheadline}
+      </p>
 
       {/* Pills */}
       <div className="flex gap-2 flex-wrap">
@@ -234,7 +298,10 @@ function ProductCard({
       {/* CLIENT: no numbers, no lines, no italics, no full stops */}
       {product.bullets.length > 0 && (
         <div>
-          <p className="text-[15px] font-semibold mb-2">
+          <p
+            className="text-[15px] font-semibold mb-2"
+            style={{ color: "#1e1d18" }}
+          >
             In under a week, uncover:
           </p>
           <ul className="flex flex-col">
@@ -247,8 +314,17 @@ function ProductCard({
 
       {/* CLIENT: "When to use" box removed — no render */}
 
-      {/* Timeline (both Diagnostics and App now have this) */}
-      {product.steps && <ProcessTimeline steps={product.steps} />}
+      {/* Timeline — Diagnostics: "What it takes" | App: "From access to action, automatically" */}
+      {product.steps && (
+        <ProcessTimeline
+          steps={product.steps}
+          title={
+            product.tag === "LiaVia App"
+              ? "From access to action, automatically"
+              : "What it takes"
+          }
+        />
+      )}
 
       {/* App levels */}
       {product.continuousLevels && (
@@ -317,11 +393,17 @@ export default function HowItWorks() {
       <div className="px-6 md:px-12 py-20 md:py-28">
         {/* Header */}
         <div ref={headingRef} className="mb-14 max-w-2xl">
-          <p className="text-lg mb-4 font-sans font-medium text-[#5a5640]">
+          <p
+            className="text-[15px] mb-4 font-medium lg:text-left text-center"
+            style={{ color: "#5a5640" }}
+          >
             How it works
           </p>
 
-          <h2 className="text-[42px] md:text-[56px] font-normal leading-[1.1] mb-6 lg:text-left text-center">
+          <h2
+            className="text-[42px] md:text-[56px] font-normal leading-[1.1] mb-6 lg:text-left text-center"
+            style={{ fontFamily: "Georgia, serif", color: "#1e1d18" }}
+          >
             Two ways to{" "}
             <span className="text-primary-gold">unlock your execution</span>{" "}
             potential
