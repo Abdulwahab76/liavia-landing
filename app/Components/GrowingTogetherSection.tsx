@@ -7,24 +7,24 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function GrowingTogetherSection() {
+export default function HowItWorksSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const labelRef = useRef<HTMLParagraphElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const subTextRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     const wrapper = wrapperRef.current;
-    const label = labelRef.current;
     const heading = headingRef.current;
+    const subText = subTextRef.current;
 
-    if (!section || !wrapper || !label || !heading) return;
+    if (!section || !wrapper || !heading || !subText) return;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
         wrapper,
-        { width: "50%", borderRadius: "32px" },
+        { width: "55%", borderRadius: "28px" },
         {
           width: "100%",
           borderRadius: "0px",
@@ -38,32 +38,30 @@ export default function GrowingTogetherSection() {
         }
       );
 
-      // LABEL
       gsap.fromTo(
-        label,
+        heading,
         { y: 0 },
         {
-          y: -200, // push up strongly
+          y: -150,
           ease: "none",
           scrollTrigger: {
             trigger: section,
-            start: "top 30%",
+            start: "top 50%",
             end: "top top",
             scrub: 1,
           },
         }
       );
 
-      // HEADING
       gsap.fromTo(
-        heading,
+        subText,
         { y: 0 },
         {
-          y: -200, // more than label for depth
+          y: -120,
           ease: "none",
           scrollTrigger: {
             trigger: section,
-            start: "top 50%",
+            start: "top 55%",
             end: "top top",
             scrub: 1,
           },
@@ -77,40 +75,42 @@ export default function GrowingTogetherSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full flex justify-center items-center py-8 bg-primary "
+      className="w-full flex justify-center items-center py-10 bg-primary relative z-40"
     >
-      {/* Expanding image wrapper */}
       <div
         ref={wrapperRef}
-        className="relative z-40 overflow-hidden h-120 w-full mx-4 lg:mx-10 rounded-4xl! will-change-[width,border-radius]"
+        className="relative overflow-hidden h-125 w-full mx-4 lg:mx-10 rounded-4xl! will-change-[width,border-radius]"
       >
-        {/* Background image */}
         <Image
-          src="/images/smart.webp"
-          alt="Grain silos aerial view"
+          src="/images/bg-3.png"
+          alt="Abstract network visualization"
           fill
-          className="object-cover object-center"
+          sizes="100vw"
+          className="object-cover object-top"
           priority
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/15 to-black/45" />
+        {/* Premium overlay (not dull) */}
+        <div className="absolute inset-0 bg-linear-to-b from-[#0b1d2a]/40 via-[#0b1d2a]/55 to-black/70" />
 
-        {/* Text */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
-          <p
-            ref={labelRef}
-            className="text-lg tracking-wider text-white/85 mb-5 font-medium"
-          >
-            Growing together
-          </p>
-
+        {/* Content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h2
             ref={headingRef}
-            className="text-4xl lg:text-[55px] leading-tight text-white font-normal max-w-175"
+            className="text-[42px] lg:text-[56px] font-normal leading-[1.1] text-white   max-w-225"
           >
-            We work to create value for our clients, partners and team members
+            LiaVia exposes internal dynamics and behaviours that shape the
+            execution momentum of your plans
           </h2>
+
+          <p
+            ref={subTextRef}
+            className="mt-2 text-base lg:text-lg text-white/85 max-w-187.5"
+          >
+            LiaVia exposes internal power dynamics and behaviours that will
+            shape execution momentum by analysing your organization's
+            communication patterns
+          </p>
         </div>
       </div>
     </section>

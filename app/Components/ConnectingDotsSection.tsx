@@ -1,10 +1,9 @@
 "use client";
 
 import { JSX, useEffect, useRef } from "react";
- import Link from "next/link";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import WeSectionDots from "./weDots";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,7 +98,7 @@ export default function CopenhagenSection(): JSX.Element {
             <span className="text-primary-gold">
               perception
               <br />
-              to execution
+              to execution momentum
             </span>
           </h1>
 
@@ -115,21 +114,22 @@ export default function CopenhagenSection(): JSX.Element {
             </p>
 
             <p className="italic text-footer-bg font-medium">
-              “Perception is reality.”
+              “Perception is reality.”, they say.
             </p>
 
             <p className="italic text-footer-bg font-medium">
               “Then let’s make sure our perception is objective and
-              data-driven.”
+              data-driven.”, we say.
             </p>
 
             <p>
               At the heart of our solution is an AI-powered, proprietary
               framework that draws on cognitive and organisational behaviour
-              research — grounding perception in operational reality.
+              research to root your perceptions in your operational reality. —
+              grounding perception in operational reality.
             </p>
 
-            <p className="font-medium text-[#0f0f0f]">
+            <p className="font-medium text-primary-gold">
               Because strong ideas need strong execution.
             </p>
 
@@ -167,7 +167,7 @@ export default function CopenhagenSection(): JSX.Element {
                     <path d="m12 5 7 7-7 7" />
                   </svg>
                   <span className="text-sm whitespace-nowrap font-normal">
-                    Contact Us
+                    let’s talk
                   </span>
                 </span>
               </button>
@@ -177,8 +177,7 @@ export default function CopenhagenSection(): JSX.Element {
 
         {/* Right */}
         {/* <div className="flex-1 relative lg:flex hidden" /> */}
-        {/* <WeSectionDots /> */}
-      </div>
+       </div>
     </div>
   );
 }
