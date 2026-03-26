@@ -8,15 +8,15 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-primary h-18 relative z-50">
-      <div className="max-w-7xl mx-auto w-full flex items-center justify-between h-full px-4 md:px-6">
+    <header className="w-full bg-primary h-22 relative z-50">
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-between h-full px-4 md:px-0">
         {/* Left: Logo + Desktop Nav */}
-        <div className="flex items-center gap-32">
+        <div className="flex items-center gap-40">
           <Link href="/">
             <Image
               src="/images/logo.png"
-              width={100}
-              height={100}
+              width={140}
+              height={32}
               alt="Logo"
               priority
               className="cursor-pointer"
@@ -24,39 +24,40 @@ const Header = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-14 text-[15px] font-medium text-black">
+          <nav className="hidden md:flex items-center gap-14 text-base font-medium text-black">
             <Link
               href="#what"
-              className="hover:opacity-70 font-bold text-[13px]"
+              className="hover:opacity-70   font-normal text-base"
             >
               What
             </Link>
             <Link
-              href="#who"
-              className="hover:opacity-70 font-bold text-[13px]"
+              href="#how"
+              className="hover:opacity-70  font-normal text-base"
             >
-              Who
+              How
             </Link>
             <Link
               href="#security"
-              className="hover:opacity-70 font-bold text-[13px]"
+              className="hover:opacity-70 font-normal text-base"
             >
               Security
             </Link>
-
-            {/* CTA */}
+            <Link href="#who" className="hover:opacity-70 font-normal text-sm">
+              Who
+            </Link>
           </nav>
         </div>
 
         {/* Right: Desktop Career */}
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Link
             href="#contact"
-            className="px-4 py-1.5 rounded-full    text-[13px] font-bold  transition"
+            className="px-4 py-1.5 rounded-full   tracking-wide text-[16px] font-normal  transition"
           >
-            Contact
+            Career
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Hamburger */}
         <button
@@ -86,20 +87,26 @@ const Header = () => {
 
           {/* Menu */}
           <nav className="flex flex-col gap-6 text-lg font-medium">
-            <Link href="#what" onClick={() => setOpen(false)}>
+            <Link
+              href="#what"
+              className="hover:opacity-70   font-normal text-base"
+            >
               What
             </Link>
-            <Link href="#who" onClick={() => setOpen(false)}>
-              Who
+            <Link
+              href="#how"
+              className="hover:opacity-70  font-normal text-base"
+            >
+              How
             </Link>
-            <Link href="#security" onClick={() => setOpen(false)}>
+            <Link
+              href="#security"
+              className="hover:opacity-70 font-normal text-base"
+            >
               Security
             </Link>
-            <Link href="#contact" onClick={() => setOpen(false)}>
-              Contact
-            </Link>
-            <Link href="/career" onClick={() => setOpen(false)}>
-              Career
+            <Link href="#who" className="hover:opacity-70 font-normal text-sm">
+              Who
             </Link>
           </nav>
         </div>

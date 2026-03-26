@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -335,10 +336,10 @@ export default function SecuritySafety() {
             commit to anything.
           </p>
         </div>
-        <a
+        <Link
           href="mailto:hello@liavia.ai"
+          target="_blank"
           className="inline-flex items-center bg-primary-gold text-white w-32  gap-2 px-5 py-2.5 rounded-full text-sm font-medium shrink-0 transition-opacity hover:bg-dark-gold"
-         
         >
           Talk to us
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -350,7 +351,7 @@ export default function SecuritySafety() {
               strokeLinejoin="round"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   );

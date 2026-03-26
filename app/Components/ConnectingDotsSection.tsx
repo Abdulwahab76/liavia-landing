@@ -148,13 +148,27 @@ export default function CopenhagenSection(): JSX.Element {
             ref={ctaRef}
             className="mt-8 flex lg:justify-start justify-center"
           >
-            <Link href="#contact">
+            <Link href="mailto:hello@liavia.ai" target="_blank">
               <button className="group relative inline-flex items-center overflow-hidden pr-3 rounded-full mt-8 bg-primary-gold hover:bg-dark-gold p-1 shadow-primary transition">
-                <span className="relative z-10 flex items-center gap-2 py-1 px-3 font-bold text-white">
-                  <span className="flex h-8 w-8 items-center justify-center">
-                    →
+                <span className="relative z-10 flex items-center gap-2 py-1 px-3 font-bold text-white cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-arrow-right-icon lucide-arrow-right"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                  <span className="text-sm whitespace-nowrap font-normal">
+                    Contact Us
                   </span>
-                  <span className="text-sm whitespace-nowrap">Contact Us</span>
                 </span>
               </button>
             </Link>

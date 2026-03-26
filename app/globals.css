@@ -27,6 +27,8 @@
   --bg-primary: var(--bg-primary);
   --bg-secondary: var(--bg-secondary);
   --animate-arrow-down: arrowDown 1.5s ease-in-out infinite;
+  --text-base:15px;
+ 
 
   @keyframes arrowDown {
     0% {
@@ -46,7 +48,8 @@
 }
  
 p,a,li {
-  font-family: var(--font-primary); 
+  font-family: var(--font-primary) ; 
+  letter-spacing: 0.015em;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);

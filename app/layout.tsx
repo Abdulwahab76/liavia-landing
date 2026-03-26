@@ -12,9 +12,9 @@ const headingFont = localFont({
 });
 
 const primaryFont = localFont({
-  src: "./fonts/NHaasGroteskTXPro-55Rg.otf",
+  src: "./fonts/NHaasGroteskTXPro-65Md.woff",
   variable: "--font-primary",
-  weight: "500",
+  weight: "400",
   display: "swap",
 });
 export const metadata: Metadata = {
