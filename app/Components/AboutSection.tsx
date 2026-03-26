@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import React, { JSX, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutSection = (): JSX.Element => {
+const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -17,7 +17,7 @@ const AboutSection = (): JSX.Element => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 🔹 Heading
+      // Heading animation
       if (headingRef.current) {
         gsap.fromTo(
           headingRef.current,
@@ -35,7 +35,7 @@ const AboutSection = (): JSX.Element => {
         );
       }
 
-      // 🔹 Paragraphs (stagger)
+      // Content paragraphs stagger
       if (contentRef.current) {
         gsap.fromTo(
           Array.from(contentRef.current.children),
@@ -54,7 +54,7 @@ const AboutSection = (): JSX.Element => {
         );
       }
 
-      // 🔹 Image (premium feel)
+      // Image animation
       if (imageRef.current) {
         gsap.fromTo(
           imageRef.current,
@@ -77,87 +77,88 @@ const AboutSection = (): JSX.Element => {
   }, []);
 
   return (
-    <div
-      ref={sectionRef}
-      className="w-full bg-primary font-serif relative z-40"
-      id="who"
-    >
-      <div className="w-full px-4 lg:px-12 py-16 flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
-        {/* LEFT CONTENT */}
-        <div className="w-full lg:flex-[0_0_55%] flex flex-col justify-center text-center lg:text-left">
-          <p className="text-lg mb-4 font-sans font-medium text-[#5a5640]">
-            Who we are
-          </p>
-
-          {/* ✅ Heading */}
-          <h1
-            ref={headingRef}
-            className="text-4xl lg:text-[54px] font-medium leading-[1.1] mb-6 text-footer-bg"
-          >
-            <span className="text-primary-gold">Turning reality </span>
-            <br />
-            into perception
-          </h1>
-
-          {/* ✅ Content */}
-          <div
-            ref={contentRef}
-            className="space-y-4 text-base lg:text-lg leading-[1.75] font-sans font-light text-[#3d3b2e]"
-          >
-            <p>
-              Our founders joined forces in 2025 to develop a novel solution to
-              an age-old problem:
-              <span className="italic text-footer-bg font-medium">
-                {" "}
-                “Perception is reality.”
-              </span>
+    <section className="bg-primary">
+      <div
+        ref={sectionRef}
+        className="w-full max-w-7xl mx-auto  font-serif relative z-40"
+        id="who"
+      >
+        <div className="w-full px-4 lg:px-0 py-16 flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
+          {/* LEFT CONTENT */}
+          <div className="w-full lg:flex-[0_0_55%] flex flex-col justify-center text-center lg:text-left">
+            <p className="text-lg mb-4 font-sans font-medium text-[#5a5640]">
+              Who we are
             </p>
 
-            <p>
-              With decades of combined experience across cognitive behaviour
-              research, strategy execution, and change management, we are on a
-              mission to turn
-              <span className="italic text-footer-bg font-medium">
-                {" "}
-                reality into perception.
-              </span>
-            </p>
+            {/* Heading */}
+            <h1
+              ref={headingRef}
+              className="text-4xl lg:text-[54px] font-medium leading-[1.1] mb-6 text-footer-bg"
+            >
+              <span className="text-primary-gold">Turning reality </span>
+              <br />
+              into perception
+            </h1>
 
-            <p className="font-medium text-[#0f0f0f]">Fast. Quiet. Relevant.</p>
+            {/* Content */}
+            <div
+              ref={contentRef}
+              className="space-y-4 text-base lg:text-lg leading-[1.75] font-sans font-light text-[#3d3b2e]"
+            >
+              <p>
+                Our founders joined forces in 2025 to develop a novel solution
+                to{" "}
+                <span className="  font-medium text-footer-bg">
+                  the age-old problem:
+                </span>{" "}
+                <span className="  font-medium text-footer-bg">
+                  Perception =&gt; Reality
+                </span>
+              </p>
 
-            <p>
-              This mantra shapes everything we do — how we operate, how we
-              build, and how we deliver.
-            </p>
+              <p>
+                With decades of combined experience, spanning across cognitive
+                behaviour research, strategic execution, and change management,
+                we are on a mission to make{" "}
+                <span className="  font-medium text-footer-bg">
+                  Reality =&gt; Perception
+                </span>
+                .
+              </p>
 
-            <p>
-              In a world full of noise, we don’t add to it. LiaVia searches for
-              the signal — the truth that leads the way forward.
-            </p>
+              <p className="font-medium  text-footer-bg">
+                Fast. Quiet. Relevant.
+              </p>
 
-            <p>
-              We hold ourselves accountable to this standard, and expect the
-              same from our customers and partners.
-            </p>
+              <p>
+                It forms the basis of everything we do — how we operate, how we
+                develop, and how we deliver.
+              </p>
+
+              <p>
+                In a world full of noise, we do not want to add to it. Instead,
+                LiaVia hunts for truth that leads the way forward.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="w-full lg:w-5/12 flex items-stretch flex-1">
-          <div
-            ref={imageRef}
-            className="relative w-full h-75 md:h-100 lg:h-140 rounded-2xl overflow-hidden"
-          >
-            <Image
-              src="/images/about.webp"
-              alt="Who we are"
-              fill
-              className="object-cover"
-            />
+          {/* RIGHT IMAGE */}
+          <div className="w-full lg:w-5/12 flex items-stretch flex-1">
+            <div
+              ref={imageRef}
+              className="relative w-full h-75 md:h-100 lg:h-140 rounded-2xl overflow-hidden"
+            >
+              <Image
+                src="/images/logo.png"
+                alt="LiaVia Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -145,61 +145,63 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="relative z-40 px-4  lg:px-12 py-16 bg-primary  lg:text-left text-center  ">
+      <footer className="bg-primary">
         {/* Top: banner */}
         {/* Divider */}
-        <div
-          className="w-full h-px mb-12"
-          style={{ background: "rgba(30,29,24,0.12)" }}
-        />
-        <div
-          className="pb-14 mb-14 border-b"
-          style={{ borderColor: "rgba(255,255,255,0.08)" }}
-        >
-          <p className="text-sm tracking-[0.12em] uppercase mb-4 text-footer-bg font-medium">
-            Contact
-          </p>
-
-          <h2 className="text-[38px] md:text-[56px] font-normal leading-[1.1] mb-6 text-footer-bg">
-            Design Your Momentum
-          </h2>
-
-          <a
-            href="mailto:hello@liavia.ai"
-            className="inline-flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+        <div className="relative z-40 px-4 w-full max-w-7xl mx-auto  lg:px-0 py-16 bg-primary  lg:text-left text-center  ">
+          <div
+            className="w-full h-px mb-12"
+            style={{ background: "rgba(30,29,24,0.12)" }}
+          />
+          <div
+            className="pb-14 mb-14 border-b"
+            style={{ borderColor: "rgba(255,255,255,0.08)" }}
           >
-            hello@liavia.ai
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M3 7h8M7 3l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
+            <p className="text-sm tracking-[0.12em] uppercase mb-4 text-footer-bg font-medium">
+              Contact
+            </p>
 
-        {/* Bottom: legal row */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 *:text-footer-bg lg:text-left text-center">
-          <p className="text-xs">
-            © {new Date().getFullYear()} LiaVia Ltd. All rights reserved.
-          </p>
+            <h2 className="text-[38px] md:text-[56px] font-normal leading-[1.1] mb-6 text-footer-bg">
+              Design Your Momentum
+            </h2>
 
-          <div className="flex items-center gap-6 justify-center lg:justify-start">
-            <button
-              onClick={() => setOpenModal("privacy")}
-              className="text-xs transition-opacity hover:opacity-70 cursor-pointer"
+            <a
+              href="mailto:hello@liavia.ai"
+              className="inline-flex items-center gap-2 text-base transition-opacity hover:opacity-70"
             >
-              Privacy Policy
-            </button>
-            <button
-              onClick={() => setOpenModal("cookie")}
-              className="text-xs transition-opacity hover:opacity-70 cursor-pointer"
-            >
-              Cookie Policy
-            </button>
+              hello@liavia.ai
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M3 7h8M7 3l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+          {/* Bottom: legal row */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 *:text-footer-bg lg:text-left text-center">
+            <p className="text-xs">
+              © {new Date().getFullYear()} LiaVia Ltd. All rights reserved.
+            </p>
+
+            <div className="flex items-center gap-6 justify-center lg:justify-start">
+              <button
+                onClick={() => setOpenModal("privacy")}
+                className="text-xs transition-opacity hover:opacity-70 cursor-pointer"
+              >
+                Privacy Policy
+              </button>
+              <button
+                onClick={() => setOpenModal("cookie")}
+                className="text-xs transition-opacity hover:opacity-70 cursor-pointer"
+              >
+                Cookie Policy
+              </button>
+            </div>
           </div>
         </div>
       </footer>

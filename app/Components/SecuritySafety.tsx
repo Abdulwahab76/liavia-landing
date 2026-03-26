@@ -27,7 +27,7 @@ const intro =
 const pillars: SecurityPillar[] = [
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <svg className="w-6 h-6" viewBox="0 0 22 22" fill="none">
         <path
           d="M11 2L3 6v5c0 4.42 3.42 8.56 8 9.56C16.58 19.56 20 15.42 20 11V6L11 2z"
           stroke="currentColor"
@@ -43,13 +43,13 @@ const pillars: SecurityPillar[] = [
         />
       </svg>
     ),
-    title: "Ring-fenced data environment",
+    title: "Ring-fenced AI solution",
     description:
-      "Your data never mingles with other organisations. LiaVia operates as an isolated layer on top of your existing comms infrastructure — no centralised data pooling, ever.",
+      "LiaVia operates as an isolated layer on top of your existing comms infrastructure trained for a very specific analysis. No prompting, scope adjustment or information sharing / pooling, ever.",
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <svg className="w-6 h-6" viewBox="0 0 22 22" fill="none">
         <rect
           x="3"
           y="10"
@@ -70,11 +70,11 @@ const pillars: SecurityPillar[] = [
     ),
     title: "Strict need-to-know access",
     description:
-      "Insights are delivered only to the role that needs them. Executives see aggregate patterns, PMs see execution forecasts, employees see only their own career data. No cross-contamination.",
+      "Insights are delivered only to the role you identified and pre-approved. Executives see aggregate patterns, PMs see execution forecasts, employees see only their own career data. No cross-contamination.",
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <svg className="w-6 h-6" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="1.5" />
         <path
           d="M11 7v4l3 2"
@@ -90,22 +90,7 @@ const pillars: SecurityPillar[] = [
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path
-          d="M4 4h6v6H4zM12 4h6v6h-6zM4 12h6v6H4zM12 12h6v6h-6z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "You own your data",
-    description:
-      "LiaVia never claims ownership of your communications or outputs. Your data remains yours. You decide what is analysed, for how long, and when it is deleted.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <svg className="w-6 h-6" viewBox="0 0 22 22" fill="none">
         <path
           d="M3 8l8-5 8 5v9a1 1 0 01-1 1H4a1 1 0 01-1-1V8z"
           stroke="currentColor"
@@ -122,11 +107,26 @@ const pillars: SecurityPillar[] = [
     ),
     title: "On-site analysis",
     description:
-      "The diagnostic runs inside your environment. Raw communication data is never extracted or transmitted externally. Only the structured insight output is surfaced to your team.",
+      "The diagnostic runs inside your environment be it Microsoft or some provider’s cloud tenancy. Raw communication data is never extracted or transmitted externally. Only the structured insight output is surfaced to your team.",
   },
   {
     icon: (
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <svg className="w-6 h-6" viewBox="0 0 22 22" fill="none">
+        <path
+          d="M4 4h6v6H4zM12 4h6v6h-6zM4 12h6v6H4zM12 12h6v6h-6z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    title: "You own your data",
+    description:
+      "LiaVia never claims ownership of your communications or outputs. Your data remains yours. You decide on the access, for how long, and when it is deleted.",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" viewBox="0 0 22 22" fill="none">
         <path
           d="M12 2a10 10 0 100 20A10 10 0 0012 2z"
           stroke="currentColor"
@@ -167,20 +167,13 @@ function PillarCard({
   return (
     <div
       ref={animRef}
-      className="rounded-2xl p-6 flex flex-col gap-4"
-      style={{
-        background: "rgba(255,255,255,0.45)",
-        border: "1px solid rgba(30,29,24,0.1)",
-      }}
+      className="rounded-2xl p-6 flex flex-col gap-4 bg-white/50 border border-gray-200"
     >
-      <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-        style={{ background: "#ad781c", color: "white" }}
-      >
+      <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-[#ad781c] text-white">
         {pillar.icon}
       </div>
-      <h3 className="text-base font-semibold leading-snug">{pillar.title}</h3>
-      <p className="text-sm leading-relaxed" style={{ color: "#5a5640" }}>
+      <h3 className="text-lg font-semibold leading-snug">{pillar.title}</h3>
+      <p className="text-sm text-[#5a5640] leading-relaxed">
         {pillar.description}
       </p>
     </div>
@@ -190,16 +183,10 @@ function PillarCard({
 function Badge({ label }: { label: string }) {
   return (
     <span
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide border"
-      style={{
-        borderColor: "rgba(30,29,24,0.2)",
-        color: "#1e1d18",
-      }}
+      style={{ fontFamily: "var(--font-primary)" }}
+      className="inline-flex   items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium tracking-wide border border-gray-200 text-[#1e1d18]"
     >
-      <span
-        className="w-1.5 h-1.5 rounded-full shrink-0"
-        style={{ background: "#1e1d18" }}
-      />
+      <p className="w-1.5 h-1.5 rounded-full shrink-0 bg-footer-bg" />
       {label}
     </span>
   );
@@ -215,7 +202,6 @@ export default function SecuritySafety() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading
       gsap.fromTo(
         headingRef.current,
         { opacity: 0, y: 30 },
@@ -224,14 +210,10 @@ export default function SecuritySafety() {
           y: 0,
           duration: 0.8,
           ease: "power2.out",
-          scrollTrigger: {
-            trigger: headingRef.current,
-            start: "top 85%",
-          },
+          scrollTrigger: { trigger: headingRef.current, start: "top 85%" },
         }
       );
 
-      // Badges strip
       gsap.fromTo(
         badgesRef.current,
         { opacity: 0, y: 20 },
@@ -240,14 +222,10 @@ export default function SecuritySafety() {
           y: 0,
           duration: 0.7,
           ease: "power2.out",
-          scrollTrigger: {
-            trigger: badgesRef.current,
-            start: "top 88%",
-          },
+          scrollTrigger: { trigger: badgesRef.current, start: "top 88%" },
         }
       );
 
-      // Pillar cards stagger
       cardRefs.current.forEach((el, i) => {
         if (!el) return;
         gsap.fromTo(
@@ -259,10 +237,7 @@ export default function SecuritySafety() {
             duration: 0.75,
             ease: "power2.out",
             delay: (i % 3) * 0.1,
-            scrollTrigger: {
-              trigger: el,
-              start: "top 90%",
-            },
+            scrollTrigger: { trigger: el, start: "top 90%" },
           }
         );
       });
@@ -272,86 +247,76 @@ export default function SecuritySafety() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-primary px-6 md:px-12 py-20 md:py-28 relative z-40"
-      id="security"
-    >
-      {/* Header */}
-      <div ref={headingRef} className="mb-10 max-w-2xl">
-        <p className="text-lg md:text-lg mb-4 font-sans font-medium text-[#5a5640]  lg:text-left text-center">
-          Security &amp; Safety
-        </p>
-
-        <h2 className="text-[42px] md:text-[56px] font-normal leading-[1.1] mb-6  lg:text-left text-center">
-          Your{" "}
-          <span className="text-primary-gold"> data stays 100% safe, </span>{" "}
-          compliant and under your control & ownership
-        </h2>
-
-        <p className="text-[15px] leading-[1.75]  lg:text-left text-center">
-          {intro}
-        </p>
-      </div>
-
-      {/* Compliance badges */}
-      <div ref={badgesRef} className="flex flex-wrap gap-2 mb-12">
-        {badges.map((b) => (
-          <Badge key={b.label} label={b.label} />
-        ))}
-      </div>
-
-      {/* Divider */}
-      <div
-        className="w-full h-px mb-12"
-        style={{ background: "rgba(30,29,24,0.12)" }}
-      />
-
-      {/* Pillar grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {pillars.map((pillar, i) => (
-          <PillarCard
-            key={i}
-            pillar={pillar}
-            animRef={(el) => {
-              cardRefs.current[i] = el;
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Bottom reassurance bar */}
-      <div
-        className="mt-12 rounded-2xl px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4"
-        style={{
-          background: "#1e1d18",
-        }}
-      >
-        <div className="flex-1">
-          <p className="text-sm font-semibold text-white mb-1">
-            Questions about how we handle your data?
+    <section ref={sectionRef} id="security" className="bg-primary">
+      <div className="w-full max-w-7xl mx-auto bg-primary px-4 md:px-0 py-20 md:py-28 relative z-40">
+        {/* Header */}
+        <div ref={headingRef} className="mb-10 max-w-full">
+          <p className="text-lg font-sans font-medium text-[#5a5640] mb-4 lg:text-left text-center">
+            Security &amp; Safety
           </p>
-          <p className="text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
-            We're happy to walk you through our security architecture before you
-            commit to anything.
+
+          <h2 className="text-[42px] md:text-[56px] font-normal leading-[1.1] mb-6 max-w-full lg:text-left text-center">
+            Your{" "}
+            <span className="text-primary-gold">
+              GDPR compliant data stays 100% safe,
+            </span>{" "}
+            compliant and under your control & ownership
+          </h2>
+
+          <p className="text-[15px] leading-[1.75] max-w-full lg:text-left text-center">
+            {intro}
           </p>
         </div>
-        <Link
-          href="mailto:hello@liavia.ai"
-          target="_blank"
-          className="inline-flex items-center bg-primary-gold text-white w-32  gap-2 px-5 py-2.5 rounded-full text-sm font-medium shrink-0 transition-opacity hover:bg-dark-gold"
+
+        {/* Compliance badges */}
+        <div
+          ref={badgesRef}
+          className="flex flex-wrap gap-2 justify-center mb-12"
         >
-          Talk to us
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M3 7h8M7 3l4 4-4 4"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          {badges.map((b) => (
+            <Badge key={b.label} label={b.label} />
+          ))}
+        </div>
+
+        {/* Pillar grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {pillars.map((pillar, i) => (
+            <PillarCard
+              key={i}
+              pillar={pillar}
+              animRef={(el) => (cardRefs.current[i] = el)}
             />
-          </svg>
-        </Link>
+          ))}
+        </div>
+
+        {/* Bottom reassurance bar */}
+        <div className="mt-12 rounded-2xl px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4 bg-primary-gold">
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-white mb-1">
+              Questions about how we handle your data?
+            </p>
+            <p className="text-sm text-white/60">
+              We're happy to walk you through our security architecture before
+              you commit to anything.
+            </p>
+          </div>
+          <Link
+            href="mailto:hello@liavia.ai"
+            target="_blank"
+            className="inline-flex items-center bg-white text-black w-32 gap-2 px-5 py-2.5 rounded-full text-sm font-medium shrink-0 transition-opacity "
+          >
+            Talk to us
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M3 7h8M7 3l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -213,7 +213,7 @@ function AppTimeline({ steps }: { steps: ProcessStep[] }) {
             {/* Step box */}
             <div className="flex flex-col items-center sm:flex-1 gap-2">
               <div
-                className="rounded-xl p-4 flex flex-col items-center justify-center text-center sm:flex-1 min-h-40 min-w-40 lg:min-w-30 lg:min-h-30"
+                className="rounded-xl p-4 flex flex-col items-center justify-center text-center sm:flex-1 min-h-40 min-w-40 lg:min-w-30 lg:min-h-34"
                 style={{
                   background: "rgba(173,120,28,0.08)",
                   border: "1px solid rgba(173,120,28,0.2)",
@@ -411,35 +411,34 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-primary relative z-40">
-      {/* Body */}
-      <div className="px-6 md:px-12 py-20 md:py-28">
-        <div ref={headingRef} className="mb-14 max-w-2xl">
-          <p
-            className="text-[15px] mb-4 font-medium"
-            style={{ color: "#5a5640" }}
-          >
-            How it works
-          </p>
-          <h2 className="text-[42px] md:text-[56px] font-normal leading-[1.1] mb-6">
-            Two ways to{" "}
-            <span style={{ color: "#AD781C" }}>unlock your execution</span>{" "}
-            potential
-          </h2>
-          {/* ✅ CLIENT: same font size as "What we do" body */}
-          <p
-            className="text-[15px] leading-[1.75]"
-            style={{ color: "#3d3b2e" }}
-          >
-            {intro}
-          </p>
-        </div>
+    <section ref={sectionRef} id="how" className="bg-primary relative z-40">
+      <div className="max-w-7xl w-full mx-auto   ">
+        <div className="px-4 lg:px-0 py-20 md:py-28">
+          <div ref={headingRef} className="mb-14 max-w-2xl">
+            <p
+              className="text-[15px] mb-4 font-medium lg:text-left text-center"
+              style={{ color: "#5a5640" }}
+            >
+              How it works
+            </p>
+            <h2 className="text-[42px] md:text-[56px] font-normal leading-[1.1] mb-6 lg:text-left text-center">
+              Two ways to{" "}
+              <span style={{ color: "#AD781C" }}>unlock your execution</span>{" "}
+              potential
+            </h2>
+            {/* ✅ CLIENT: same font size as "What we do" body */}
+            <p className="text-[15px] leading-[1.75] lg:text-left text-center">
+              {intro}
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <ProductCard product={diagnostics} animRef={card1Ref} />
-          <ProductCard product={app} animRef={card2Ref} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <ProductCard product={diagnostics} animRef={card1Ref} />
+            <ProductCard product={app} animRef={card2Ref} />
+          </div>
         </div>
       </div>
+      {/* Body */}
     </section>
   );
 }

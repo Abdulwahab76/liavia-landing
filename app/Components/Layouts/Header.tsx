@@ -43,7 +43,7 @@ const Header = () => {
             >
               Security
             </Link>
-            <Link href="#who" className="hover:opacity-70 font-normal text-sm">
+            <Link href="#who" className="hover:opacity-70 font-normal text-base">
               Who
             </Link>
           </nav>
@@ -105,7 +105,7 @@ const Header = () => {
             >
               Security
             </Link>
-            <Link href="#who" className="hover:opacity-70 font-normal text-sm">
+            <Link href="#who" className="hover:opacity-70 font-normal text-base">
               Who
             </Link>
           </nav>
