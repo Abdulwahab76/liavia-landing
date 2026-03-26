@@ -1,10 +1,10 @@
 "use client";
 
 import { JSX, useEffect, useRef } from "react";
-import { registerTrigger } from "./DotsCanvas";
-import Link from "next/link";
+ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import WeSectionDots from "./weDots";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +17,7 @@ export default function CopenhagenSection(): JSX.Element {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    registerTrigger(sectionRef.current);
+    // registerTrigger(sectionRef.current);
 
     const ctx = gsap.context(() => {
       if (headingRef.current) {
@@ -176,7 +176,8 @@ export default function CopenhagenSection(): JSX.Element {
         </div>
 
         {/* Right */}
-        <div className="flex-1 relative lg:flex hidden" />
+        {/* <div className="flex-1 relative lg:flex hidden" /> */}
+        {/* <WeSectionDots /> */}
       </div>
     </div>
   );

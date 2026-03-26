@@ -77,12 +77,12 @@ export default function GrowingTogetherSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full flex justify-center items-center py-8 bg-primary"
+      className="w-full flex justify-center items-center py-8 bg-primary "
     >
       {/* Expanding image wrapper */}
       <div
         ref={wrapperRef}
-        className="relative overflow-hidden h-120 w-full mx-4 lg:mx-10 rounded-4xl! will-change-[width,border-radius]"
+        className="relative z-40 overflow-hidden h-120 w-full mx-4 lg:mx-10 rounded-4xl! will-change-[width,border-radius]"
       >
         {/* Background image */}
         <Image

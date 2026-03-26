@@ -24,7 +24,7 @@ export default function VideoHero() {
           {/* Content */}
           <div className="relative z-10 grid h-full grid-rows-[1fr_auto_1fr] text-white px-4 sm:px-6 lg:px-6">
             {/* Center Title */}
-            <div className="row-start-2 gap-y-4 flex flex-col items-center justify-center text-center px-2">
+            <div className="row-start-2 gap-y-2 lg:gap-y-0 flex flex-col items-center justify-center text-center px-2">
               <h1
                 className="font-serif font-light leading-[1.05]
           text-4xl   lg:text-[94px]"
@@ -32,10 +32,8 @@ export default function VideoHero() {
                 Momentum. By Design.
               </h1>
 
-              {/* Paragraph */}
-
               <Link href="mailto:hello@liavia.ai" target="_blank">
-                <button className="group relative inline-flex items-center overflow-hidden   pr-3 rounded-full mt-8  w-40   p-1">
+                <button className="group relative inline-flex items-center overflow-hidden   pr-3 rounded-full    w-40   p-1">
                   {/* Expanding bg */}
                   <span className="absolute left-1  h-10 w-10 rounded-full  bg-primary-gold hover:bg-dark-gold     transition-all duration-300 ease-in-out group-hover:w-[calc(100%-0.5rem)]"></span>
 
