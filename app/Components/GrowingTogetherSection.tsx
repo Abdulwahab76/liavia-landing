@@ -80,7 +80,7 @@ export default function HowItWorksSection() {
           className="relative overflow-hidden h-125 w-full mx-4 lg:mx-0 rounded-4xl! will-change-[width,border-radius]"
         >
           <Image
-            src="/images/bg-3.png"
+            src="/images/abstract-representation.jpg"
             alt="Abstract network visualization"
             fill
             sizes="100vw"
