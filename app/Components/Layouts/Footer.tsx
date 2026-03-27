@@ -145,10 +145,10 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-primary">
+      <footer className="bg-primary relative z-40 ">
         {/* Top: banner */}
         {/* Divider */}
-        <div className="relative z-40 px-4 w-full max-w-7xl mx-auto  lg:px-0 py-16 bg-primary  lg:text-left text-center  ">
+        <div className="px-4 w-full max-w-7xl mx-auto    lg:px-0 py-16 bg-primary  lg:text-left text-center  ">
           <div
             className="w-full h-px mb-12"
             style={{ background: "rgba(30,29,24,0.12)" }}

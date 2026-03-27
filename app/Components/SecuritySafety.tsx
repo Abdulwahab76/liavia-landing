@@ -247,8 +247,12 @@ export default function SecuritySafety() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="security" className="bg-primary">
-      <div className="w-full max-w-7xl mx-auto bg-primary px-4 md:px-0 py-20 md:py-28 relative z-40">
+    <section
+      ref={sectionRef}
+      id="security"
+      className="bg-primary relative z-40 "
+    >
+      <div className="w-full max-w-7xl mx-auto bg-primary px-4 md:px-0 py-20 md:py-28  ">
         {/* Header */}
         <div ref={headingRef} className="mb-10 max-w-full">
           <p className="text-lg font-sans font-medium text-[#5a5640] mb-4 lg:text-left text-center">

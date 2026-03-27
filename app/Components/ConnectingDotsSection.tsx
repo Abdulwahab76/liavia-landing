@@ -83,7 +83,7 @@ export default function CopenhagenSection(): JSX.Element {
         ref={sectionRef}
         className=" max-w-7xl w-full mx-auto flex items-stretch min-h-[90vh] overflow-hidden bg-primary font-serif relative"
       >
-        <div className="px-4 lg:px-0  flex w-full">
+        <div className="px-4 lg:px-0  flex w-full relative lg:z-0 z-40">
           {/* Left */}
           <div className="basis-full lg:flex-[0_0_55%] w-full py-16 flex flex-col justify-center z-10 lg:text-left text-center">
             <p className="text-lg mb-4 font-sans font-medium text-[#5a5640]">
