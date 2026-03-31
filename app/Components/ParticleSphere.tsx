@@ -190,7 +190,7 @@ export default function ParticleSphere(): JSX.Element {
   }, []);
 
   return (
-    <div className="w-full bg-primary ">
+    <div className="w-full bg-primary " id="particle">
       <div
         ref={mountRef}
         className="

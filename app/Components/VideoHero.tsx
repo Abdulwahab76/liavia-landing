@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function VideoHero() {
   return (
     <section className="bg-primary">
-      <div className=" max-w-7xl w-full mx-auto flex items-center justify-start relative z-40">
-        <div className="relative w-full    lg:mx-0 mx-4 h-[75vh] sm:h-[85vh] lg:h-[79vh] overflow-hidden rounded-4xl lg:rounded-4xl lg:px-20">
+      <div className="  flex items-center justify-start relative z-40">
+        <div className="relative w-full     h-[75vh] sm:h-[85vh] lg:h-[79vh] overflow-hidden   ">
           {/* Background Video */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -95,7 +95,7 @@ export default function VideoHero() {
               <div>
                 <p
                   className="w-full  
-          text-xs   lg:text-[18px] font-normal max-w-md "
+          text-xs   lg:text-[18px] font-normal max-w-4xl "
                 >
                   Strategy sets direction. Execution sets trajectory.
                   <br />

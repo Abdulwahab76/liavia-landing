@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${primaryFont.variable} ${headingFont.variable}  `}>
         <Header />
-        <GlobalDotCanvas />
+        {/* <GlobalDotCanvas /> */}
         {children}
         <Footer />
       </body>

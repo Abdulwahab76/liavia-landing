@@ -4,6 +4,8 @@ import { JSX, useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SectionDots from "./SectionDots";
+import SectionDotCanvas from "./SectionDots";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -178,6 +180,7 @@ export default function CopenhagenSection(): JSX.Element {
 
           {/* Right */}
           {/* <div className="flex-1 relative lg:flex hidden" /> */}
+          <SectionDotCanvas sectionId="what" />
         </div>
       </div>
     </section>

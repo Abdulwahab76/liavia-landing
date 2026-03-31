@@ -29,22 +29,25 @@ const Header = () => {
               href="#what"
               className="hover:opacity-70   font-normal text-base"
             >
-              What
+              What we do
             </Link>
             <Link
               href="#how"
               className="hover:opacity-70  font-normal text-base"
             >
-              How
+              How it works
             </Link>
             <Link
               href="#security"
               className="hover:opacity-70 font-normal text-base"
             >
-              Security
+              Security & Safety
             </Link>
-            <Link href="#who" className="hover:opacity-70 font-normal text-base">
-              Who
+            <Link
+              href="#who"
+              className="hover:opacity-70 font-normal text-base"
+            >
+              Who we are
             </Link>
           </nav>
         </div>
@@ -91,22 +94,25 @@ const Header = () => {
               href="#what"
               className="hover:opacity-70   font-normal text-base"
             >
-              What
+              What we do
             </Link>
             <Link
               href="#how"
               className="hover:opacity-70  font-normal text-base"
             >
-              How
+              How it works
             </Link>
             <Link
               href="#security"
               className="hover:opacity-70 font-normal text-base"
             >
-              Security
+              Security & Safety
             </Link>
-            <Link href="#who" className="hover:opacity-70 font-normal text-base">
-              Who
+            <Link
+              href="#who"
+              className="hover:opacity-70 font-normal text-base"
+            >
+              Who we are
             </Link>
           </nav>
         </div>
