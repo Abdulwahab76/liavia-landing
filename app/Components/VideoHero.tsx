@@ -6,7 +6,7 @@ export default function VideoHero() {
   return (
     <section className="bg-primary">
       <div className="  flex items-center justify-start relative z-40">
-        <div className="relative w-full     h-[75vh] sm:h-[85vh] lg:h-[79vh] overflow-hidden   ">
+        <div className="relative w-full     h-[75vh] sm:h-[85vh] lg:h-[calc(100vh-88px)] overflow-hidden   ">
           {/* Background Video */}
           <video
             className="absolute inset-0 w-full h-full object-cover"
@@ -22,7 +22,7 @@ export default function VideoHero() {
           <div className="absolute inset-0 bg-black/35"></div>
 
           {/* Content */}
-          <div className="relative z-10 grid h-full grid-rows-[1fr_auto_1fr] text-white px-4 sm:px-6 lg:px-6">
+          <div className="relative z-10 grid h-full grid-rows-[1fr_auto_1fr] text-white px-4   lg:px-6">
             {/* Center Title */}
             <div className="row-start-2 gap-y-2 lg:gap-y-0 flex flex-col items-center justify-center text-center px-2">
               <h1
