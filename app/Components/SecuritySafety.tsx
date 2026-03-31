@@ -173,10 +173,7 @@ function PillarCard({
         {pillar.icon}
       </div>
       <h3 className="text-xl font-semibold leading-snug">{pillar.title}</h3>
-      <p
-        className="text-lg  lg:text-left text-center"
-        style={{ color: "#3d3b2e" }}
-      >
+      <p className="text-lg   " style={{ color: "#3d3b2e" }}>
         {pillar.description}
       </p>
     </div>

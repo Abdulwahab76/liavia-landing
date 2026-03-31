@@ -241,7 +241,7 @@ function ProductCard({
       {/* Headline — no bold */}
       {/* ✅ CLIENT: same font size/type as "What we do" body text */}
       <p
-        className="text-lg  lg:text-left text-center"
+        className="text-lg   "
         style={{ color: "#3d3b2e" }}
       >
         {product.headline}
@@ -250,7 +250,7 @@ function ProductCard({
       {/* Subheadline — same size as headline, no bold */}
       {/* ✅ CLIENT: "No noise..." same size/font as headline sentence above */}
       <p
-        className="text-lg  lg:text-left text-center"
+        className="text-lg   "
         style={{ color: "#3d3b2e" }}
       >
         {product.subheadline}
@@ -268,7 +268,7 @@ function ProductCard({
         <div>
           {/* ✅ CLIENT: "In under a week" label — no bold */}
           <p
-            className="text-lg  lg:text-left text-center"
+            className="text-lg  "
             style={{ color: "#3d3b2e" }}
           >
             In under a week, uncover:
@@ -290,7 +290,7 @@ function ProductCard({
       {isApp && product.continuousLevels && (
         <div>
           {product.footerNote && (
-            <p className="text-[15px] mb-2" style={{ color: "#1e1d18" }}>
+            <p className="text-lg " style={{ color: "#3d3b2e" }}>
               {product.footerNote}
             </p>
           )}
