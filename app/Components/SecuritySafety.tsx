@@ -169,11 +169,14 @@ function PillarCard({
       ref={animRef}
       className="rounded-2xl p-6 flex flex-col gap-4 bg-white/50 border border-gray-200"
     >
-      <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-[#ad781c] text-white">
+      <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-primary-gold text-white">
         {pillar.icon}
       </div>
-      <h3 className="text-lg font-semibold leading-snug">{pillar.title}</h3>
-      <p className="text-sm text-[#5a5640] leading-relaxed">
+      <h3 className="text-xl font-semibold leading-snug">{pillar.title}</h3>
+      <p
+        className="text-lg  lg:text-left text-center"
+        style={{ color: "#3d3b2e" }}
+      >
         {pillar.description}
       </p>
     </div>
@@ -261,13 +264,14 @@ export default function SecuritySafety() {
 
           <h2 className="text-[42px] md:text-[56px] font-normal leading-[1.1] mb-6 max-w-full lg:text-left text-center">
             Your{" "}
-            <span className="text-primary-gold">
-              GDPR compliant data stays 100% safe,
-            </span>{" "}
-            compliant and under your control & ownership
+            <span className="text-primary-gold">data stays 100% safe,</span>{" "}
+            GDPR compliant and under your control & ownership
           </h2>
 
-          <p className="text-[15px] leading-[1.75] max-w-full lg:text-left text-center">
+          <p
+            className="text-lg  lg:text-left text-center"
+            style={{ color: "#3d3b2e" }}
+          >
             {intro}
           </p>
         </div>
