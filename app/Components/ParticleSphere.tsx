@@ -197,9 +197,9 @@ export default function ParticleSphere(): JSX.Element {
           w-full 
           h-70      
           sm:h-90      
-          md:h-125     
-          lg:h-150      
-          xl:h-175
+          md:h-105     
+          lg:h-130      
+          xl:h-135
        
          "
       />

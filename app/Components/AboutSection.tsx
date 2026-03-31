@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ParticleSphere from "./ParticleSphere";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -140,7 +141,7 @@ const AboutSection = () => {
 
           {/* RIGHT IMAGE */}
           <div className="w-full lg:w-5/12 flex items-stretch flex-1">
-            <div
+            {/* <div
               ref={imageRef}
               className="relative w-full h-75 md:h-100 lg:h-140 rounded-2xl overflow-hidden"
             >
@@ -150,6 +151,10 @@ const AboutSection = () => {
                 fill
                 className="object-contain"
               />
+            </div> */}
+            <div className="w-full       relative z-40">
+              {" "}
+              <ParticleSphere />
             </div>
           </div>
         </div>

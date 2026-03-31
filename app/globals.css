@@ -47,7 +47,7 @@
 
 }
  
-p,a,li {
+p,a,li,button {
   font-family: var(--font-primary) ; 
   letter-spacing: 0.015em;
 }

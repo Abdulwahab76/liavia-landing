@@ -15,10 +15,7 @@ export default function Home() {
     <div>
       <VideoHero />
       <CopenhagenSection />
-      <div className="w-full    lg:w-full flex justify-center items-center mx-auto   relative z-40">
-        {" "}
-        <ParticleSphere />{" "}
-      </div>
+    
       <GrowingTogetherSection />
       {/* <GroupNumbers /> */}
       <HowItWorks />

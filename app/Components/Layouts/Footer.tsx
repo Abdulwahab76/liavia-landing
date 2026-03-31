@@ -1,6 +1,7 @@
 "use client";
 
 import { ModalProps } from "@/app/types/sectionTypes";
+import Image from "next/image";
 import { useState } from "react";
 
 // ─── TYPES ────────────────────────────────────
@@ -145,45 +146,59 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-primary relative z-40 ">
-        {/* Top: banner */}
-        {/* Divider */}
-        <div className="px-4 w-full max-w-7xl mx-auto    lg:px-0 py-16 bg-primary  lg:text-left text-center  ">
+      <footer className="bg-primary relative z-40">
+        <div className="px-4 w-full max-w-7xl mx-auto lg:px-0 py-16 text-center   lg:text-left">
           <div
             className="w-full h-px mb-12"
             style={{ background: "rgba(30,29,24,0.12)" }}
           />
+
+          {/* Top Content: Left & Right */}
           <div
-            className="pb-14 mb-14 border-b"
+            className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-14 pb-14 border-b"
             style={{ borderColor: "rgba(255,255,255,0.08)" }}
           >
-            <p className="text-sm tracking-[0.12em] uppercase mb-4 text-footer-bg font-medium">
-              Contact
-            </p>
+            {/* Left Content */}
+            <div className="flex-1 lg:pr-8">
+              <p className="text-sm tracking-[0.12em] uppercase mb-4 text-footer-bg font-medium">
+                Contact
+              </p>
 
-            <h2 className="text-[38px] md:text-[56px] font-normal leading-[1.1] mb-6 text-footer-bg">
-              Design Your Momentum
-            </h2>
+              <h2 className="text-[38px] md:text-[56px] font-normal leading-[1.1] mb-6 text-footer-bg">
+                Design Your Momentum
+              </h2>
 
-            <a
-              href="mailto:hello@liavia.ai"
-              className="inline-flex items-center gap-2 text-base transition-opacity hover:opacity-70"
-            >
-              hello@liavia.ai
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path
-                  d="M3 7h8M7 3l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+              <a
+                href="mailto:hello@liavia.ai"
+                className="inline-flex items-center gap-2 text-base transition-opacity hover:opacity-70 mb-6"
+              >
+                hello@liavia.ai
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M3 7h8M7 3l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            {/* Right Content */}
+            <div className="shrink-0 w-37 lg:w-70 mx-auto lg:mx-0">
+              <Image
+                src="/images/logo.png"
+                alt="LiaVia Logo"
+                width={240}
+                height={240}
+                className="object-contain"
+              />
+            </div>
           </div>
 
-          {/* Bottom: legal row */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 *:text-footer-bg lg:text-left text-center">
+          {/* Bottom: Legal Row */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-footer-bg">
             <p className="text-xs">
               © {new Date().getFullYear()} LiaVia Ltd. All rights reserved.
             </p>
@@ -206,14 +221,13 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* Privacy Policy Modal */}
+      {/* Modals */}
       {openModal === "privacy" && (
         <Modal title={PRIVACY_CONTENT.title} onClose={() => setOpenModal(null)}>
           <PolicyContent sections={PRIVACY_CONTENT.sections} />
         </Modal>
       )}
 
-      {/* Cookie Policy Modal */}
       {openModal === "cookie" && (
         <Modal title={COOKIE_CONTENT.title} onClose={() => setOpenModal(null)}>
           <PolicyContent sections={COOKIE_CONTENT.sections} />
