@@ -57,7 +57,7 @@ export default function HowItWorksSection() {
 
   return (
     <section ref={sectionRef} className="bg-primary">
-      <div className="max-w-7xl w-full mx-auto flex justify-center items-center py-10 relative z-40">
+      <div className="max-w-7xl w-full mx-auto flex justify-center items-center pt-20 relative z-40">
         <div
           ref={wrapperRef}
           className="relative overflow-hidden h-125 w-full mx-4 lg:mx-0 rounded-4xl! will-change-[width,border-radius]"

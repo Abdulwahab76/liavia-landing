@@ -358,7 +358,7 @@ export default function HowItWorks() {
     <section ref={sectionRef} id="how" className="bg-primary relative z-40">
       {/* ── Body ── */}
       <div className="max-w-7xl w-full mx-auto">
-        <div className="px-4 lg:px-0 py-20 md:py-28">
+        <div className="px-4 lg:px-0 py-20 ">
           <div ref={headingRef} className="mb-14 max-w-2xl">
             {/* ✅ CLIENT: "How it works" label — same size as "What we do" label */}
             <p

@@ -80,7 +80,7 @@ const AboutSection = () => {
   return (
     <section className="bg-primary relative z-40">
       <div ref={sectionRef} className="w-full max-w-7xl mx-auto   " id="who">
-        <div className="w-full px-4 lg:px-0 py-16 flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
+        <div className="w-full px-4 lg:px-0   flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
           {/* LEFT CONTENT */}
           <div className="w-full lg:flex-[0_0_55%] flex flex-col justify-center text-center lg:text-left">
             <p className="text-lg mb-4 font-sans font-medium text-[#5a5640]">

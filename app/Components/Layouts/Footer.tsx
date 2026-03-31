@@ -147,7 +147,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-primary relative z-40">
-        <div className="px-4 w-full max-w-7xl mx-auto lg:px-0 py-16 text-center   lg:text-left">
+        <div className="px-4 w-full max-w-7xl mx-auto lg:px-0 py-16 pt-20 text-center   lg:text-left">
           <div
             className="w-full h-px mb-12"
             style={{ background: "rgba(30,29,24,0.12)" }}

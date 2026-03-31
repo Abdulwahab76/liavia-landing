@@ -83,7 +83,7 @@ export default function CopenhagenSection() {
         className="max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-stretch min-h-[90vh] overflow-hidden relative"
       >
         {/* Left Content */}
-        <div className="px-4 lg:px-0 flex-1 py-16 flex flex-col justify-center z-10 text-center lg:text-left max-w-2xl">
+        <div className="px-4 lg:px-0 flex-1 pt-20 flex flex-col justify-center z-10 text-center lg:text-left max-w-2xl">
           <p className="text-lg mb-4 font-sans font-medium text-[#5a5640]">
             What we do
           </p>
