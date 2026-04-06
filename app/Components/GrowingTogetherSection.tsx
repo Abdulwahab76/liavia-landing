@@ -12,48 +12,48 @@ export default function HowItWorksSection() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const wrapper = wrapperRef.current;
-    const heading = headingRef.current;
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   const wrapper = wrapperRef.current;
+  //   const heading = headingRef.current;
 
-    if (!section || !wrapper || !heading) return;
+  //   if (!section || !wrapper || !heading) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        wrapper,
-        { width: "55%", borderRadius: "28px" },
-        {
-          width: "100%",
-          borderRadius: "0px",
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "top top",
-            scrub: 1,
-          },
-        }
-      );
+  //   const ctx = gsap.context(() => {
+  //     gsap.fromTo(
+  //       wrapper,
+  //       { width: "55%", borderRadius: "28px" },
+  //       {
+  //         width: "100%",
+  //         borderRadius: "0px",
+  //         ease: "none",
+  //         scrollTrigger: {
+  //           trigger: section,
+  //           start: "top bottom",
+  //           end: "top top",
+  //           scrub: 1,
+  //         },
+  //       }
+  //     );
 
-      gsap.fromTo(
-        heading,
-        { y: 0 },
-        {
-          y: -150,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 50%",
-            end: "top top",
-            scrub: 1,
-          },
-        }
-      );
-    }, section);
+  //     gsap.fromTo(
+  //       heading,
+  //       { y: 0 },
+  //       {
+  //         y: -150,
+  //         ease: "none",
+  //         scrollTrigger: {
+  //           trigger: section,
+  //           start: "top 50%",
+  //           end: "top top",
+  //           scrub: 1,
+  //         },
+  //       }
+  //     );
+  //   }, section);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <section ref={sectionRef} className="bg-primary">

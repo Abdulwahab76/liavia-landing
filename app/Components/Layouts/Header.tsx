@@ -9,9 +9,9 @@ const Header = () => {
 
   return (
     <header className="w-full bg-primary h-22 relative z-50">
-      <div className="max-w-7xl mx-auto w-full flex items-center justify-between h-full px-4 md:px-0">
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-around h-full px-4 md:px-0">
         {/* Left: Logo + Desktop Nav */}
-        <div className="flex items-center gap-40">
+        <div className="flex items-center justify-between w-full ">
           <Link href="/">
             <Image
               src="/images/logo.png"
@@ -50,6 +50,31 @@ const Header = () => {
               Who we are
             </Link>
           </nav>
+
+          <Link href="mailto:hello@liavia.ai" target="_blank">
+            <button className=" group relative hidden lg:inline-flex items-center overflow-hidden pr-3 rounded-full  bg-primary-gold hover:bg-dark-gold p-1 shadow-primary transition">
+              <span className="relative z-10 flex items-center gap-2 py-1 px-3 font-bold text-white cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-arrow-right-icon lucide-arrow-right"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+                <span className="text-sm whitespace-nowrap font-normal">
+                  Get a Quote
+                </span>
+              </span>
+            </button>
+          </Link>
         </div>
 
         {/* Right: Desktop Career */}
@@ -115,6 +140,30 @@ const Header = () => {
               Who we are
             </Link>
           </nav>
+          <Link href="mailto:hello@liavia.ai" target="_blank">
+            <button className=" group relative lg:hidden inline-flex items-center overflow-hidden mt-4 pr-3 rounded-full  bg-primary-gold hover:bg-dark-gold p-1 shadow-primary transition">
+              <span className="relative z-10 flex items-center gap-2 py-1 px-3 font-bold text-white cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-arrow-right-icon lucide-arrow-right"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+                <span className="text-sm whitespace-nowrap font-normal">
+                  Get a Quote
+                </span>
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
 
